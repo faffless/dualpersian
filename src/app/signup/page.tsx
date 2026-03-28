@@ -1,0 +1,63 @@
+"use client";
+
+import { useState } from "react";
+import { useAuth } from "@/lib/auth-context";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
+
+export default function SignUpPage() {
+  const { signUp } = useAuth();
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(""); setLoading(true);
+    if (password.length < 6) { setError("Password must be at least 6 characters"); setLoading(false); return; }
+    const { error } = await signUp(email, password);
+    if (error) { setError(error.message); setLoading(false); }
+    else { router.push("/onboarding"); }
+  };
+
+  return (
+    <div className="flex items-center justify-center min-h-screen px-4" style={{
+      backgroundImage: "url('/textures/arch-cream.png')",
+      backgroundSize: "cover",
+      backgroundPosition: "top center",
+    }}>
+      <div className="w-full max-w-md profile-card p-8">
+        <div className="flex justify-center mb-4">
+          <Image src="/textures/logo-green.png" alt="Dual Persian" width={140} height={70} />
+        </div>
+        <h1 className="font-heading text-3xl font-bold text-center mb-2 text-warm-brown">Create Account</h1>
+        <div className="ornament-divider mb-6">
+          <span className="ornament-icon">✦</span>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          {error && <div className="bg-primary/10 text-primary px-4 py-3 rounded-lg text-sm">{error}</div>}
+          <div>
+            <label className="block text-sm font-medium mb-1 text-warm-brown">Email</label>
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="warm-input" placeholder="you@example.com" />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1 text-warm-brown">Password</label>
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required className="warm-input" placeholder="At least 6 characters" />
+          </div>
+          <div className="terracotta-strip rounded-full" />
+          <button type="submit" disabled={loading} className="btn-terracotta w-full py-3">
+            {loading ? "Creating account..." : "Sign Up"}
+          </button>
+        </form>
+        <p className="text-center text-muted mt-6">
+          Already have an account?{" "}
+          <Link href="/login" className="text-primary font-medium hover:underline">Log in</Link>
+        </p>
+      </div>
+    </div>
+  );
+}

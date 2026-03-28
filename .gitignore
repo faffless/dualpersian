@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Mockup images (not used in production)
+public/textures/mockup-main.png
+public/textures/mockup-alt.png
+public/textures/favicon-source.png
+.claude/

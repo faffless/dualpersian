@@ -79,7 +79,7 @@ export default function OnboardingPage() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen px-4 py-12 page-arch">
+    <div className="flex items-center justify-center min-h-screen px-4 py-12">
       <div className="w-full max-w-md profile-card p-8">
         <div className="flex justify-center mb-4">
           <Image src="/textures/logo-green.png" alt="Dual Persian" width={120} height={60} />

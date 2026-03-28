@@ -21,7 +21,6 @@ export default function Navbar() {
 
   return (
     <nav className="bg-green-textured sticky top-0 z-50 shadow-md">
-      <div className="terracotta-strip" />
       <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
         <Link href="/discover" className="flex items-center gap-2">
           <Image

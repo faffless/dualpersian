@@ -31,30 +31,17 @@ body {
   background-image: url('/textures/main-bg.png');
   background-size: 100% auto;
   background-position: top center;
-  background-attachment: fixed;
   background-repeat: repeat-y;
   color: var(--color-foreground);
   font-family: var(--font-sans);
 }
 
-/* Desktop: use landscape image */
+/* Desktop: use landscape image, fixed attachment */
 @media (min-width: 768px) {
   body {
     background-image: url('/textures/main-bg-landscape.png');
+    background-attachment: fixed;
   }
-}
-
-/* Fade overlay to blend repeating background seams */
-body::before {
-  content: '';
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 120px;
-  background: linear-gradient(to bottom, transparent, #F5EDE3);
-  z-index: -1;
-  pointer-events: none;
 }
 
 /* Serif heading utility */

@@ -29,11 +29,7 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen px-4" style={{
-      backgroundImage: "url('/textures/arch-cream.png')",
-      backgroundSize: "cover",
-      backgroundPosition: "top center",
-    }}>
+    <div className="flex items-center justify-center min-h-screen px-4">
       <div className="w-full max-w-md profile-card p-8">
         <div className="flex justify-center mb-4">
           <Image src="/textures/logo-green.png" alt="Dual Persian" width={140} height={70} />

@@ -27,11 +27,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section — full arch background */}
-      <section className="relative overflow-hidden" style={{
-        backgroundImage: "url('/textures/arch-cream.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "top center",
-      }}>
+      <section className="relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center gap-8 md:gap-16">
           {/* Left: Text */}
           <div className="flex-1 text-center md:text-left">
@@ -83,13 +79,7 @@ export default function Home() {
       <div className="terracotta-strip" />
 
       {/* Tagline Section — cream textured */}
-      <section className="py-12 px-4 text-center" style={{
-        backgroundImage: "url('/textures/cream-border.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundBlendMode: "soft-light",
-        backgroundColor: "#F5EDE3",
-      }}>
+      <section className="py-12 px-4 text-center">
         <div className="ornament-divider max-w-3xl mx-auto mb-6">
           <span className="ornament-icon">✦</span>
         </div>
@@ -105,13 +95,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-12 px-4" style={{
-        backgroundImage: "url('/textures/cream-border-2.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundBlendMode: "soft-light",
-        backgroundColor: "#F5EDE3",
-      }}>
+      <section className="py-12 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
@@ -138,8 +122,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Band — terracotta textured */}
-      <section className="bg-terracotta-textured py-12 px-4 text-center">
+      {/* CTA Band — green textured */}
+      <section className="bg-green-textured py-12 px-4 text-center">
         <h2 className="font-heading text-2xl md:text-3xl font-bold text-white mb-4">
           Join a community of dual-culture singles
         </h2>

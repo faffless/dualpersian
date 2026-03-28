@@ -32,20 +32,14 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Background on main so it starts right below the navbar */
-main {
-  background-color: #F5EDE3;
-  position: relative;
-}
-
-/* Background image as pseudo-element so we can fade it independently */
-main::before {
+/* Fixed background that covers the entire viewport and never scrolls */
+body::before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 100%;
+  bottom: 0;
   background-image: url('/textures/main-bg.png');
   background-size: 100% auto;
   background-position: top center;
@@ -53,18 +47,12 @@ main::before {
   -webkit-mask-image: linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
   pointer-events: none;
-  z-index: 0;
-}
-
-/* Content above the background */
-main > * {
-  position: relative;
-  z-index: 1;
+  z-index: -1;
 }
 
 /* Desktop: use landscape image */
 @media (min-width: 768px) {
-  main::before {
+  body::before {
     background-image: url('/textures/main-bg-landscape.png');
   }
 }

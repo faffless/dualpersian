@@ -28,19 +28,23 @@
 
 body {
   background-color: #F5EDE3;
-  background-image: url('/textures/main-bg.png');
-  background-size: 100% auto;
-  background-position: top center;
-  background-repeat: repeat-y;
   color: var(--color-foreground);
   font-family: var(--font-sans);
 }
 
-/* Desktop: use landscape image, fixed attachment */
+/* Background on main so it starts right below the navbar */
+main {
+  background-color: #F5EDE3;
+  background-image: url('/textures/main-bg.png');
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: repeat-y;
+}
+
+/* Desktop: use landscape image */
 @media (min-width: 768px) {
-  body {
+  main {
     background-image: url('/textures/main-bg-landscape.png');
-    background-attachment: fixed;
   }
 }
 

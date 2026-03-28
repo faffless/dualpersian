@@ -35,8 +35,8 @@ export default function Home() {
               <Image
                 src="/textures/logo-green.png"
                 alt="Dual Persian"
-                width={220}
-                height={110}
+                width={440}
+                height={220}
                 className="mx-auto md:mx-0"
               />
             </div>

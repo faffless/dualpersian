@@ -20,8 +20,8 @@ export default function Footer() {
             <Image
               src="/textures/logo-green.png"
               alt="Dual Persian"
-              width={120}
-              height={60}
+              width={240}
+              height={120}
               className="brightness-200 invert opacity-90"
             />
           </Link>

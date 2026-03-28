@@ -4,12 +4,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { useAuth } from "@/lib/auth-context";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const { user, signOut } = useAuth();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Add/remove body class so CSS knows to offset the background
+  useEffect(() => {
+    if (user) {
+      document.body.classList.add("has-navbar");
+    } else {
+      document.body.classList.remove("has-navbar");
+    }
+    return () => document.body.classList.remove("has-navbar");
+  }, [user]);
 
   if (!user) return null;
 

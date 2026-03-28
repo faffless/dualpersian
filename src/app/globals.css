@@ -36,7 +36,7 @@ body {
 body::before {
   content: '';
   position: fixed;
-  top: 56px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -55,6 +55,11 @@ body::before {
   body::before {
     background-image: url('/textures/main-bg-landscape.png');
   }
+}
+
+/* When navbar is present, push background down */
+body.has-navbar::before {
+  top: 56px;
 }
 
 /* Serif heading utility */

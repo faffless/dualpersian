@@ -61,14 +61,10 @@ main > * {
   z-index: 1;
 }
 
-/* Desktop: use landscape image, repeat allowed */
+/* Desktop: use landscape image, same no-repeat + fade */
 @media (min-width: 768px) {
   main {
     background-image: url('/textures/main-bg-landscape.png');
-    background-repeat: repeat-y;
-  }
-  main::after {
-    display: none;
   }
 }
 

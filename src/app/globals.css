@@ -35,35 +35,36 @@ body {
 /* Background on main so it starts right below the navbar */
 main {
   background-color: #F5EDE3;
+  position: relative;
+}
+
+/* Background image as pseudo-element so we can fade it independently */
+main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
   background-image: url('/textures/main-bg.png');
   background-size: 100% auto;
   background-position: top center;
   background-repeat: no-repeat;
-  position: relative;
-}
-
-/* Mobile: fade out bottom 15% of background */
-main::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 15%;
-  background: linear-gradient(to bottom, transparent, #F5EDE3);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
   pointer-events: none;
   z-index: 0;
 }
 
-/* Make sure main content sits above the fade overlay */
+/* Content above the background */
 main > * {
   position: relative;
   z-index: 1;
 }
 
-/* Desktop: use landscape image, same no-repeat + fade */
+/* Desktop: use landscape image */
 @media (min-width: 768px) {
-  main {
+  main::before {
     background-image: url('/textures/main-bg-landscape.png');
   }
 }

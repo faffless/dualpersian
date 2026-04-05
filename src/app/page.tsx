@@ -28,55 +28,57 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section — arch background left, woman photo right */}
       <section className="relative overflow-hidden">
-        <div className="flex flex-col md:flex-row min-h-[500px] md:min-h-[600px]">
-          {/* Left side: arch background with text overlay */}
-          <div className="relative flex-1 flex items-center justify-center md:justify-start">
-            {/* Arch background image */}
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: "url('/textures/arch-cream.png')" }}
-            />
-            {/* Text content overlaid on arch */}
-            <div className="relative z-10 px-8 md:px-16 py-12 max-w-lg">
-              <Image
-                src="/textures/logo-green.png"
-                alt="Dual Persian"
-                width={200}
-                height={100}
-                className="mb-6"
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row min-h-[500px] md:min-h-[550px]">
+            {/* Left side: arch background with text overlay */}
+            <div className="relative flex-1 flex items-center justify-center">
+              {/* Arch background image */}
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: "url('/textures/arch-cream.png')" }}
               />
-              <h1 className="font-heading text-3xl md:text-4xl font-bold text-warm-brown leading-tight mb-3">
-                Find Your{" "}
-                <span className="italic text-primary block">
-                  Persian Love Story.
-                </span>
-              </h1>
-              <p className="text-base text-muted mb-1">
-                The Iranian diaspora&apos;s dating app.
-              </p>
-              <p className="text-sm text-muted mb-6">
-                London · Los Angeles · Toronto · Sydney
-              </p>
-              <div className="flex gap-3">
-                <Link href="/signup" className="btn-outline text-sm px-6 py-2.5">
-                  Get Started
-                </Link>
-                <Link href="/login" className="btn-terracotta text-sm px-6 py-2.5">
-                  Log In
-                </Link>
+              {/* Text content centered within arch */}
+              <div className="relative z-10 px-8 py-10 max-w-md text-center mx-auto">
+                <Image
+                  src="/textures/logo-green.png"
+                  alt="Dual Persian"
+                  width={180}
+                  height={90}
+                  className="mb-5 mx-auto"
+                />
+                <h1 className="font-heading text-3xl md:text-4xl font-bold text-warm-brown leading-tight mb-3">
+                  Find Your{" "}
+                  <span className="italic text-primary block">
+                    Persian Love Story.
+                  </span>
+                </h1>
+                <p className="text-base text-muted mb-1">
+                  The Iranian diaspora&apos;s dating app.
+                </p>
+                <p className="text-sm text-muted mb-6">
+                  London · Los Angeles · Toronto · Sydney
+                </p>
+                <div className="flex gap-3 justify-center">
+                  <Link href="/signup" className="btn-outline text-sm px-6 py-2.5">
+                    Get Started
+                  </Link>
+                  <Link href="/login" className="btn-terracotta text-sm px-6 py-2.5">
+                    Log In
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Right side: woman photo */}
-          <div className="hidden md:block relative w-[45%]">
-            <Image
-              src="/textures/woman.png"
-              alt="Persian woman"
-              fill
-              className="object-cover object-top"
-              priority
-            />
+            {/* Right side: woman photo */}
+            <div className="hidden md:block relative w-[45%]">
+              <Image
+                src="/textures/woman.png"
+                alt="Persian woman"
+                fill
+                className="object-cover object-top"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -11,28 +11,31 @@ export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Add/remove body class so CSS knows to offset the background
+  // Always add has-navbar class since navbar always shows
   useEffect(() => {
-    if (user) {
-      document.body.classList.add("has-navbar");
-    } else {
-      document.body.classList.remove("has-navbar");
-    }
+    document.body.classList.add("has-navbar");
     return () => document.body.classList.remove("has-navbar");
-  }, [user]);
+  }, []);
 
-  if (!user) return null;
-
-  const links = [
+  const loggedInLinks = [
     { href: "/discover", label: "Discover" },
     { href: "/matches", label: "Matches" },
     { href: "/profile/edit", label: "Profile" },
   ];
 
+  const loggedOutLinks = [
+    { href: "/about", label: "About" },
+    { href: "/privacy", label: "Privacy" },
+    { href: "/terms", label: "Terms" },
+    { href: "/contact", label: "Contact" },
+  ];
+
+  const links = user ? loggedInLinks : loggedOutLinks;
+
   return (
     <nav className="bg-green-textured sticky top-0 z-50 shadow-md">
       <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
-        <Link href="/discover" className="flex items-center gap-2">
+        <Link href={user ? "/discover" : "/"} className="flex items-center gap-2">
           <Image
             src="/textures/header icon.png"
             alt="Dual Persian"
@@ -57,12 +60,23 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <button
-            onClick={signOut}
-            className="ml-2 px-3 py-2 rounded-lg text-sm text-cream/70 hover:text-white hover:bg-white/10 transition-colors"
-          >
-            Sign Out
-          </button>
+          {user ? (
+            <button
+              onClick={signOut}
+              className="ml-2 px-3 py-2 rounded-lg text-sm text-cream/70 hover:text-white hover:bg-white/10 transition-colors"
+            >
+              Sign Out
+            </button>
+          ) : (
+            <>
+              <Link href="/login" className="ml-2 px-3 py-2 rounded-lg text-sm text-cream/80 hover:text-white hover:bg-white/10 transition-colors font-heading tracking-wide">
+                Log In
+              </Link>
+              <Link href="/signup" className="ml-1 px-4 py-2 rounded-lg text-sm bg-white/20 text-white hover:bg-white/30 transition-colors font-heading tracking-wide">
+                Sign Up
+              </Link>
+            </>
+          )}
         </div>
 
         {/* Mobile hamburger */}
@@ -91,12 +105,23 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <button
-            onClick={() => { signOut(); setMenuOpen(false); }}
-            className="block w-full text-left px-3 py-2 rounded-lg text-sm text-cream/70 hover:text-white"
-          >
-            Sign Out
-          </button>
+          {user ? (
+            <button
+              onClick={() => { signOut(); setMenuOpen(false); }}
+              className="block w-full text-left px-3 py-2 rounded-lg text-sm text-cream/70 hover:text-white"
+            >
+              Sign Out
+            </button>
+          ) : (
+            <>
+              <Link href="/login" onClick={() => setMenuOpen(false)} className="block px-3 py-2 rounded-lg text-sm text-cream/80 hover:text-white font-heading">
+                Log In
+              </Link>
+              <Link href="/signup" onClick={() => setMenuOpen(false)} className="block px-3 py-2 rounded-lg text-sm text-cream/80 hover:text-white font-heading">
+                Sign Up
+              </Link>
+            </>
+          )}
         </div>
       )}
     </nav>

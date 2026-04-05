@@ -26,51 +26,55 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section — full arch background */}
+      {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 py-6 md:py-12 flex flex-col md:flex-row items-center gap-8 md:gap-16">
-          {/* Left: Text */}
-          <div className="flex-1 text-center md:text-left">
-            <div className="mb-6">
-              <Image
-                src="/textures/logo-green.png"
-                alt="Dual Persian"
-                width={440}
-                height={220}
-                className="mx-auto md:mx-0"
-              />
-            </div>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-warm-brown leading-tight mb-4">
-              Find Your{" "}
-              <span className="italic text-primary">
-                Persian Love Story.
-              </span>
-            </h1>
-            <p className="text-lg text-muted mb-2">
-              The Iranian diaspora&apos;s dating app.
-            </p>
-            <p className="text-muted mb-8">
-              London · Los Angeles · Toronto · Sydney
-            </p>
-            <div className="flex gap-4 justify-center md:justify-start">
-              <Link href="/signup" className="btn-outline">
-                Get Started
-              </Link>
-              <Link href="/login" className="btn-terracotta">
-                Log In
-              </Link>
-            </div>
+        <div className="max-w-5xl mx-auto px-4 py-8 md:py-12">
+          {/* Centered logo */}
+          <div className="text-center mb-6">
+            <Image
+              src="/textures/logo-green.png"
+              alt="Dual Persian"
+              width={220}
+              height={110}
+              className="mx-auto"
+            />
           </div>
 
-          {/* Right: Pomegranate image */}
-          <div className="flex-1 flex justify-center">
-            <Image
-              src="/textures/pomegranate.png"
-              alt="Persian decorative art"
-              width={400}
-              height={400}
-              className="max-w-[300px] md:max-w-[400px] rounded-2xl drop-shadow-lg"
-            />
+          {/* Two column: text left, art right */}
+          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
+            <div className="flex-1 text-center md:text-left">
+              <h1 className="font-heading text-3xl md:text-4xl font-bold text-warm-brown leading-tight mb-3">
+                Find Your{" "}
+                <span className="italic text-primary">
+                  Persian Love Story.
+                </span>
+              </h1>
+              <p className="text-base text-muted mb-1">
+                The Iranian diaspora&apos;s dating app.
+              </p>
+              <p className="text-sm text-muted mb-6">
+                London · Los Angeles · Toronto · Sydney
+              </p>
+              <div className="flex gap-4 justify-center md:justify-start">
+                <Link href="/signup" className="btn-outline">
+                  Get Started
+                </Link>
+                <Link href="/login" className="btn-terracotta">
+                  Log In
+                </Link>
+              </div>
+            </div>
+
+            {/* Pomegranate art */}
+            <div className="flex-shrink-0">
+              <Image
+                src="/textures/pomegranate.png"
+                alt="Persian decorative art"
+                width={200}
+                height={200}
+                className="max-w-[160px] md:max-w-[200px] drop-shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -78,24 +82,8 @@ export default function Home() {
       {/* Terracotta strip divider */}
       <div className="terracotta-strip" />
 
-      {/* Tagline Section — cream textured */}
-      <section className="py-12 px-4 text-center">
-        <div className="ornament-divider max-w-3xl mx-auto mb-6">
-          <span className="ornament-icon">✦</span>
-        </div>
-        <p className="text-lg text-muted mb-2">
-          The Iranian diaspora&apos;s dating app.
-        </p>
-        <p className="text-muted mb-2">
-          London · Los Angeles · Toronto · Sydney
-        </p>
-        <h2 className="font-heading text-2xl md:text-3xl font-semibold text-warm-brown italic mt-4">
-          Where modern dating meets timeless tradition
-        </h2>
-      </section>
-
       {/* Features Section */}
-      <section className="py-12 px-4">
+      <section className="py-6 px-4">
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
@@ -123,11 +111,11 @@ export default function Home() {
       </section>
 
       {/* CTA Band — green textured */}
-      <section className="bg-green-textured py-12 px-4 text-center">
-        <h2 className="font-heading text-2xl md:text-3xl font-bold text-white mb-4">
+      <section className="bg-green-textured py-6 px-4 text-center">
+        <h2 className="font-heading text-2xl md:text-3xl font-bold text-white mb-3">
           Join a community of dual-culture singles
         </h2>
-        <p className="text-white/80 mb-8 max-w-xl mx-auto">
+        <p className="text-white/80 mb-6 max-w-xl mx-auto text-sm">
           Sign up now and start meeting Persian singles who share your
           values and understand your background.
         </p>
@@ -146,8 +134,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
-      {/* Footer is now global via layout.tsx */}
     </div>
   );
 }

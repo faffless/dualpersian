@@ -20,12 +20,15 @@ export default function Footer() {
             <Image
               src="/textures/logo-green.png"
               alt="Dual Persian"
-              width={240}
-              height={120}
-              className="brightness-200 invert opacity-90"
+              width={300}
+              height={150}
+              className="brightness-0 invert opacity-80"
             />
           </Link>
           <nav className="flex flex-wrap justify-center gap-6 text-sm">
+            <Link href="/" className="text-white/80 hover:text-white transition-colors">
+              Home
+            </Link>
             <Link href="/about" className="text-white/80 hover:text-white transition-colors">
               About
             </Link>

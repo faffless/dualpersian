@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AboutPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 py-12">
+    <div className="max-w-3xl mx-auto px-4 py-4">
       <div className="parchment-card p-8 md:p-12">
         <div className="flex justify-center mb-4">
           <Image src="/textures/logo-green.png" alt="Dual Persian" width={320} height={160} />

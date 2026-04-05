@@ -28,7 +28,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section — full arch background */}
       <section className="relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center gap-8 md:gap-16">
+        <div className="max-w-6xl mx-auto px-4 py-6 md:py-12 flex flex-col md:flex-row items-center gap-8 md:gap-16">
           {/* Left: Text */}
           <div className="flex-1 text-center md:text-left">
             <div className="mb-6">

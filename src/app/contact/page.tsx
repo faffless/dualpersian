@@ -1,6 +1,6 @@
 export default function ContactPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 py-12">
+    <div className="max-w-3xl mx-auto px-4 py-4">
       <div className="parchment-card p-8 md:p-12">
         <h1 className="font-heading text-3xl font-bold text-warm-brown mb-2 text-center">Contact Us</h1>
         <div className="ornament-divider mb-8"><span className="ornament-icon">✦</span></div>

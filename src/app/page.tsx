@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* MOBILE Hero — pomegranate layout (hidden on desktop) */}
-      <section className="md:hidden px-4 py-8">
+      <section className="md:hidden px-4 pt-3 pb-2">
         <div className="text-center">
           <Image
             src="/textures/logo-green.png"
@@ -48,7 +48,7 @@ export default function Home() {
           <p className="text-sm text-muted mb-6">
             London · Los Angeles · Toronto · Sydney
           </p>
-          <div className="flex gap-3 justify-center mb-8">
+          <div className="flex gap-3 justify-center mb-4">
             <Link href="/signup" className="btn-outline text-sm px-6 py-2.5">
               Get Started
             </Link>
@@ -59,19 +59,23 @@ export default function Home() {
           <Image
             src="/textures/pomegranate.png"
             alt="Persian decorative art"
-            width={200}
-            height={200}
-            className="mx-auto drop-shadow-lg"
+            width={160}
+            height={160}
+            className="mx-auto drop-shadow-lg mb-2"
           />
         </div>
       </section>
 
-      {/* DESKTOP Hero — arch + woman (hidden on mobile) */}
-      <section className="hidden md:block relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-8">
-          <div className="flex min-h-[500px] rounded-xl overflow-hidden shadow-lg">
-            {/* Left side: arch background with text overlay */}
-            <div className="relative flex-1 flex items-center justify-center">
+      {/* DESKTOP Hero — arch + woman with ornate borders (hidden on mobile) */}
+      <section className="hidden md:block pt-6">
+        <div className="mx-auto" style={{ width: "70%", maxWidth: "1200px" }}>
+          <div className="flex gap-5 min-h-[480px]">
+            {/* Left side: arch background with ornate border */}
+            <div className="relative flex-1 rounded-lg overflow-hidden shadow-lg border-2 border-warm-border"
+              style={{
+                boxShadow: "0 0 0 4px #F5EDE3, 0 0 0 6px #D4C4B0, 0 0 0 10px #F5EDE3, 0 0 0 12px #D4C4B0",
+              }}
+            >
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: "url('/textures/arch-cream.png')" }}
@@ -107,8 +111,12 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right side: woman photo */}
-            <div className="relative w-[45%]">
+            {/* Right side: woman photo with ornate border */}
+            <div className="relative w-[45%] rounded-lg overflow-hidden shadow-lg border-2 border-warm-border"
+              style={{
+                boxShadow: "0 0 0 4px #F5EDE3, 0 0 0 6px #D4C4B0, 0 0 0 10px #F5EDE3, 0 0 0 12px #D4C4B0",
+              }}
+            >
               <Image
                 src="/textures/woman.png"
                 alt="Persian woman"
@@ -122,14 +130,16 @@ export default function Home() {
       </section>
 
       {/* Couples Section */}
-      <section className="hidden md:block max-w-6xl mx-auto px-8 mt-6">
-        <Image
-          src="/textures/couples.png"
-          alt="Success stories — Bahar & Arash in Los Angeles, Dorsa & Farhad in Toronto, Roya & Navid in London"
-          width={1400}
-          height={400}
-          className="w-full h-auto rounded-xl shadow-lg"
-        />
+      <section className="hidden md:block pt-6">
+        <div className="mx-auto" style={{ width: "70%", maxWidth: "1200px" }}>
+          <Image
+            src="/textures/couples.png"
+            alt="Success stories — Bahar & Arash in Los Angeles, Dorsa & Farhad in Toronto, Roya & Navid in London"
+            width={1400}
+            height={400}
+            className="w-full h-auto rounded-lg shadow-lg"
+          />
+        </div>
       </section>
 
       {/* Features Section */}

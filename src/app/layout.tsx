@@ -4,6 +4,7 @@ import "./globals.css";
 import { AuthProvider } from "@/lib/auth-context";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -62,6 +63,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1 pt-12">{children}</main>
           <Footer />
+          <CookieConsent />
         </AuthProvider>
       </body>
     </html>

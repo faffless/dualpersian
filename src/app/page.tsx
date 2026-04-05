@@ -26,26 +26,28 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
+      {/* Hero Section — arch background left, woman photo right */}
       <section className="relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-4 py-8 md:py-12">
-          {/* Centered logo */}
-          <div className="text-center mb-6">
-            <Image
-              src="/textures/logo-green.png"
-              alt="Dual Persian"
-              width={220}
-              height={110}
-              className="mx-auto"
+        <div className="flex flex-col md:flex-row min-h-[500px] md:min-h-[600px]">
+          {/* Left side: arch background with text overlay */}
+          <div className="relative flex-1 flex items-center justify-center md:justify-start">
+            {/* Arch background image */}
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: "url('/textures/arch-cream.png')" }}
             />
-          </div>
-
-          {/* Two column: text left, art right */}
-          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
-            <div className="flex-1 text-center md:text-left">
+            {/* Text content overlaid on arch */}
+            <div className="relative z-10 px-8 md:px-16 py-12 max-w-lg">
+              <Image
+                src="/textures/logo-green.png"
+                alt="Dual Persian"
+                width={200}
+                height={100}
+                className="mb-6"
+              />
               <h1 className="font-heading text-3xl md:text-4xl font-bold text-warm-brown leading-tight mb-3">
                 Find Your{" "}
-                <span className="italic text-primary">
+                <span className="italic text-primary block">
                   Persian Love Story.
                 </span>
               </h1>
@@ -55,35 +57,46 @@ export default function Home() {
               <p className="text-sm text-muted mb-6">
                 London · Los Angeles · Toronto · Sydney
               </p>
-              <div className="flex gap-4 justify-center md:justify-start">
-                <Link href="/signup" className="btn-outline">
+              <div className="flex gap-3">
+                <Link href="/signup" className="btn-outline text-sm px-6 py-2.5">
                   Get Started
                 </Link>
-                <Link href="/login" className="btn-terracotta">
+                <Link href="/login" className="btn-terracotta text-sm px-6 py-2.5">
                   Log In
                 </Link>
               </div>
             </div>
+          </div>
 
-            {/* Pomegranate art */}
-            <div className="flex-shrink-0">
-              <Image
-                src="/textures/pomegranate.png"
-                alt="Persian decorative art"
-                width={200}
-                height={200}
-                className="max-w-[160px] md:max-w-[200px] drop-shadow-lg"
-              />
-            </div>
+          {/* Right side: woman photo */}
+          <div className="hidden md:block relative w-[45%]">
+            <Image
+              src="/textures/woman.png"
+              alt="Persian woman"
+              fill
+              className="object-cover object-top"
+              priority
+            />
           </div>
         </div>
       </section>
 
-      {/* Terracotta strip divider */}
-      <div className="terracotta-strip" />
+      {/* Couples Section — terracotta/red background with couple cards */}
+      <section className="relative overflow-hidden">
+        <Image
+          src="/textures/couples.png"
+          alt="Success stories — Bahar & Arash in Los Angeles, Dorsa & Farhad in Toronto, Roya & Navid in London"
+          width={1400}
+          height={400}
+          className="w-full h-auto"
+        />
+      </section>
 
       {/* Features Section */}
-      <section className="py-6 px-4">
+      <section className="py-8 px-4">
+        <h2 className="font-heading text-2xl md:text-3xl font-semibold text-warm-brown text-center italic mb-6">
+          Where modern dating meets timeless tradition
+        </h2>
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
@@ -111,7 +124,7 @@ export default function Home() {
       </section>
 
       {/* CTA Band — green textured */}
-      <section className="bg-green-textured py-6 px-4 text-center">
+      <section className="bg-green-textured py-8 px-4 text-center">
         <h2 className="font-heading text-2xl md:text-3xl font-bold text-white mb-3">
           Join a community of dual-culture singles
         </h2>

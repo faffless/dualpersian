@@ -13,45 +13,28 @@ export default function Footer() {
   return (
     <footer className="bg-footer-textured">
       <div className="terracotta-strip opacity-50" />
-      <div className="max-w-5xl mx-auto px-4 py-10">
-        {/* Top row: Logo + nav links */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
+      <div className="max-w-5xl mx-auto px-4 py-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-3">
           <Link href="/">
             <Image
               src="/textures/logo-green.png"
               alt="Dual Persian"
-              width={300}
-              height={150}
+              width={140}
+              height={70}
               className="brightness-0 invert opacity-80"
             />
           </Link>
-          <nav className="flex flex-wrap justify-center gap-6 text-sm">
-            <Link href="/" className="text-white/80 hover:text-white transition-colors">
-              Home
-            </Link>
-            <Link href="/about" className="text-white/80 hover:text-white transition-colors">
-              About
-            </Link>
-            <Link href="/privacy" className="text-white/80 hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-white/80 hover:text-white transition-colors">
-              Terms of Service
-            </Link>
-            <Link href="/cookies" className="text-white/80 hover:text-white transition-colors">
-              Cookie Policy
-            </Link>
-            <Link href="/contact" className="text-white/80 hover:text-white transition-colors">
-              Contact
-            </Link>
+          <nav className="flex flex-wrap justify-center gap-4 text-xs">
+            <Link href="/" className="text-white/80 hover:text-white transition-colors">Home</Link>
+            <Link href="/about" className="text-white/80 hover:text-white transition-colors">About</Link>
+            <Link href="/privacy" className="text-white/80 hover:text-white transition-colors">Privacy</Link>
+            <Link href="/terms" className="text-white/80 hover:text-white transition-colors">Terms</Link>
+            <Link href="/cookies" className="text-white/80 hover:text-white transition-colors">Cookies</Link>
+            <Link href="/contact" className="text-white/80 hover:text-white transition-colors">Contact</Link>
           </nav>
         </div>
-
-        {/* Divider */}
-        <div className="border-t border-white/20 mb-6" />
-
-        {/* Bottom row */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/50">
+        <div className="border-t border-white/20 my-3" />
+        <div className="flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-white/50">
           <p>&copy; 2026 Dual Persian. All rights reserved.</p>
           <p>dualpersian.com</p>
         </div>

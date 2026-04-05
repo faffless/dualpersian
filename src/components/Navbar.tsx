@@ -34,11 +34,11 @@ export default function Navbar() {
       <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
         <Link href="/discover" className="flex items-center gap-2">
           <Image
-            src="/textures/logo-green.png"
+            src="/textures/header icon.png"
             alt="Dual Persian"
-            width={100}
-            height={35}
-            className="brightness-200 invert opacity-90"
+            width={120}
+            height={40}
+            className="brightness-0 invert"
           />
         </Link>
 

@@ -24,7 +24,7 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen px-4">
+    <div className="flex items-start md:items-center justify-center min-h-screen px-4 pt-8 md:pt-0">
       <div className="w-full max-w-md profile-card p-8">
         <div className="flex justify-center mb-4">
           <Image src="/textures/logo-green.png" alt="Dual Persian" width={140} height={70} />

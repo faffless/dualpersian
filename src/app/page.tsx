@@ -68,7 +68,7 @@ export default function Home() {
 
       {/* DESKTOP Hero — arch + woman with ornate borders (hidden on mobile) */}
       <section className="hidden md:block pt-6">
-        <div className="mx-auto" style={{ width: "70%", maxWidth: "1200px" }}>
+        <div className="max-w-5xl mx-auto px-4">
           <div className="flex gap-5 min-h-[480px]">
             {/* Left side: arch background with ornate border */}
             <div className="relative flex-1 rounded-lg overflow-hidden shadow-lg border-2 border-warm-border"
@@ -80,31 +80,32 @@ export default function Home() {
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: "url('/textures/arch-cream.png')" }}
               />
-              <div className="relative z-10 px-8 py-10 max-w-md text-center mx-auto">
+              {/* Content positioned in center of arch */}
+              <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 py-8 text-center">
                 <Image
                   src="/textures/logo-green.png"
                   alt="Dual Persian"
-                  width={180}
-                  height={90}
-                  className="mb-5 mx-auto"
+                  width={150}
+                  height={75}
+                  className="mb-4 mx-auto"
                 />
-                <h1 className="font-heading text-3xl lg:text-4xl font-bold text-warm-brown leading-tight mb-3">
+                <h1 className="font-heading text-2xl lg:text-3xl font-bold text-warm-brown leading-tight mb-2">
                   Find Your{" "}
                   <span className="italic text-primary block">
                     Persian Love Story.
                   </span>
                 </h1>
-                <p className="text-base text-muted mb-1">
+                <p className="text-sm text-muted mb-0.5">
                   The Iranian diaspora&apos;s dating app.
                 </p>
-                <p className="text-sm text-muted mb-6">
+                <p className="text-xs text-muted mb-4">
                   London · Los Angeles · Toronto · Sydney
                 </p>
                 <div className="flex gap-3 justify-center">
-                  <Link href="/signup" className="btn-outline text-sm px-6 py-2.5">
+                  <Link href="/signup" className="btn-outline text-sm px-5 py-2">
                     Get Started
                   </Link>
-                  <Link href="/login" className="btn-terracotta text-sm px-6 py-2.5">
+                  <Link href="/login" className="btn-terracotta text-sm px-5 py-2">
                     Log In
                   </Link>
                 </div>
@@ -131,14 +132,20 @@ export default function Home() {
 
       {/* Couples Section */}
       <section className="hidden md:block pt-6">
-        <div className="mx-auto" style={{ width: "70%", maxWidth: "1200px" }}>
-          <Image
-            src="/textures/couples.png"
-            alt="Success stories — Bahar & Arash in Los Angeles, Dorsa & Farhad in Toronto, Roya & Navid in London"
-            width={1400}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
-          />
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="rounded-lg overflow-hidden shadow-lg border-2 border-warm-border"
+            style={{
+              boxShadow: "0 0 0 4px #F5EDE3, 0 0 0 6px #D4C4B0, 0 0 0 10px #F5EDE3, 0 0 0 12px #D4C4B0",
+            }}
+          >
+            <Image
+              src="/textures/couples.png"
+              alt="Success stories — Bahar & Arash in Los Angeles, Dorsa & Farhad in Toronto, Roya & Navid in London"
+              width={1400}
+              height={400}
+              className="w-full h-auto"
+            />
+          </div>
         </div>
       </section>
 

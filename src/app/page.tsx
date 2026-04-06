@@ -112,8 +112,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right side: woman photo with ornate border */}
-            <div className="relative w-[45%] rounded-lg overflow-hidden shadow-lg border-2 border-warm-border"
+            {/* Right side: woman photo with ornate border — equal width */}
+            <div className="relative flex-1 rounded-lg overflow-hidden shadow-lg border-2 border-warm-border"
               style={{
                 boxShadow: "0 0 0 4px #F5EDE3, 0 0 0 6px #D4C4B0, 0 0 0 10px #F5EDE3, 0 0 0 12px #D4C4B0",
               }}
@@ -126,25 +126,6 @@ export default function Home() {
                 priority
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Couples Section */}
-      <section className="hidden md:block pt-6">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="rounded-lg overflow-hidden shadow-lg border-2 border-warm-border"
-            style={{
-              boxShadow: "0 0 0 4px #F5EDE3, 0 0 0 6px #D4C4B0, 0 0 0 10px #F5EDE3, 0 0 0 12px #D4C4B0",
-            }}
-          >
-            <Image
-              src="/textures/couples.png"
-              alt="Success stories — Bahar & Arash in Los Angeles, Dorsa & Farhad in Toronto, Roya & Navid in London"
-              width={1400}
-              height={400}
-              className="w-full h-auto"
-            />
           </div>
         </div>
       </section>
@@ -177,6 +158,25 @@ export default function Home() {
               <p className="text-sm text-muted">{feature.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Couples Section */}
+      <section className="hidden md:block pb-6">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="rounded-lg overflow-hidden shadow-lg border-2 border-warm-border"
+            style={{
+              boxShadow: "0 0 0 4px #F5EDE3, 0 0 0 6px #D4C4B0, 0 0 0 10px #F5EDE3, 0 0 0 12px #D4C4B0",
+            }}
+          >
+            <Image
+              src="/textures/couples.png"
+              alt="Success stories — Bahar & Arash in Los Angeles, Dorsa & Farhad in Toronto, Roya & Navid in London"
+              width={1400}
+              height={400}
+              className="w-full h-auto"
+            />
+          </div>
         </div>
       </section>
 

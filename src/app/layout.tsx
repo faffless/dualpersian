@@ -19,17 +19,17 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Dual Persian — Meet the Iranian Diaspora",
+  title: "Dual Persian — The Iranian Diaspora Community",
   description:
-    "A dating app connecting Iranians worldwide. Find your match in the global Persian community.",
+    "The community platform for Iranians worldwide. Meet singles, join discussions, find events, and connect with the Persian diaspora.",
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Dual Persian — Find Your Persian Love Story",
+    title: "Dual Persian — The Iranian Diaspora Community",
     description:
-      "The dating app for the Iranian diaspora. Connect with Persians in London, LA, Toronto, Sydney and beyond.",
+      "The community platform for Iranians worldwide. Meet singles, join forums, find events, and connect with the Persian diaspora.",
     url: "https://dualpersian.com",
     siteName: "Dual Persian",
     images: [
